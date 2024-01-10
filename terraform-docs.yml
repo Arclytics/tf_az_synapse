@@ -1,0 +1,36 @@
+formatter: markdown table
+
+include:
+  - examples/*/*.tf
+
+content: |-
+  {{ .Header }}
+
+    ![Architecture](./docs/arch.excalidraw.svg)
+
+    ### Terraform module usage example
+
+    Below you can find a simple example of how to reuse the module. 
+
+
+    #### Example with public synapse workspace
+
+    ```hcl
+    {{ include "examples/public_workspace/main.tf" }}
+    ```
+
+
+  # Azure Synapse Module inputs
+
+  {{ .Inputs }}
+
+  # Azure Synapse Module outputs
+
+  {{ .Outputs }}
+
+  # Azure Synapse Module providers
+
+  {{ .Providers }}
+
+output:
+  file: README.md
